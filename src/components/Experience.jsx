@@ -51,7 +51,7 @@ const experiences = [
       "Exploring CI/CD concepts and automation using GitHub Actions.",
       "Assisting in monitoring cloud resources and improving deployment processes.",
     ],
-  }
+  },
 ];
 
 const ExperienceCard = ({ experience, onClick, isActive, isMobile }) => {
