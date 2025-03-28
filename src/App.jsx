@@ -1,25 +1,24 @@
-import { useEffect, useRef } from 'react';
 import { BrowserRouter } from "react-router-dom";
 import { Contact, Experience, Hero, Navbar, Portfolio } from "./components";
+import CustomCursor from "./components/CustomCursor"; // Import here
 
 const App = () => {
-  const wrapperRef = useRef(null);
-
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
+      <div className="main-container relative z-0 bg-primary">
+        <CustomCursor /> {/* Ensure it's inside the main container */}
         <Navbar />
-        <div className='wrapper' ref={wrapperRef}>
-          <div id="hero" className='z-10'>
-            <Hero scrollContainer={wrapperRef} />
+        <div className="wrapper">
+          <div id="hero">
+            <Hero />
           </div>
-          <div id="portfolio" className='relative z-30 bg-primary mt-[-2px]'>
+          <div id="portfolio">
             <Portfolio />
           </div>
-          <div id="experience" className='relative z-30 bg-primary'>
+          <div id="experience">
             <Experience />
           </div>
-          <div id="contact" className='relative z-30 bg-primary'>
+          <div id="contact">
             <Contact />
           </div>
         </div>
