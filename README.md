@@ -1,4 +1,4 @@
-# 3D Parallax Developer Portfolio Website
+# Responsive 3D Portfolio Website
 
 ![3D Parallax Developer Portfolio Thumbnail](https://github.com/tharun977/My3dportfolio/blob/main/public/assets/portfolio.png)
 
