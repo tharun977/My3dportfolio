@@ -1,10 +1,58 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-import { experiences } from "../data";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
+
+const experiences = [
+  {
+    title: "Front-End Developer Intern",
+    company_name: "Dcinfotech",
+    date: "Sep 2024",
+    details: [
+      "Completed a front-end development internship at Dcinfotech.",
+      "Built some responsive and interactive  web-apps.",
+      "Used React.js, Tailwind CSS, and JavaScript to enhance user experience.",
+      'GitHub Repository: <a href="https://github.com/tharun977/Dcinfotech" target="_blank" class="text-blue-500 underline">View Project</a>',
+    ],
+  },
+  {
+    title: "Machine Learning Intern",
+    company_name: "Prodigy Infotech",
+    date: "Oct 2024",
+    details: [
+      "Developed a K-means clustering model for retail consumer data.",
+      "Analyzed and visualized customer segmentation using Python and Scikit-Learn.",
+      "Worked with real-world datasets to gain insights into customer behavior.",
+      'GitHub Repository: <a href="https://github.com/tharun977/PRODIGY_ML_03" target="_blank" class="text-blue-500 underline">View Project</a>',
+    ],
+  },
+  {
+    title: "Django Developer(self-employed)",
+    company_name: "Rumi Press",
+    date: "Jul 2024 - Present",
+    details: [
+      "Developing a Django-based web application to manage book distribution.",
+      "Implemented CRUD functionalities for book categories and distribution expenses.",
+      "Designed and optimized database models for better performance.",
+      'GitHub Repository: <a href="https://github.com/tharun977/Projects/tree/main/rumipress" target="_blank" class="text-blue-500 underline">View Project</a>',
+
+    ],
+  },
+  {
+    title: "Cloud Engineer Intern",
+    company_name: "Cloud Counselage Pvt. Ltd.",
+    date: "Oct 2024 - Present",
+    details: [
+      "Learning the fundamentals of cloud computing and infrastructure management.",
+      "Working with AWS services like EC2, S3, and IAM for basic cloud operations.",
+      "Setting up and managing virtual machines and storage solutions.",
+      "Exploring CI/CD concepts and automation using GitHub Actions.",
+      "Assisting in monitoring cloud resources and improving deployment processes.",
+    ],
+  }
+];
 
 const ExperienceCard = ({ experience, onClick, isActive, isMobile }) => {
   return (
@@ -71,9 +119,7 @@ const Experience = () => {
   return (
     <div className="sm:my-20">
       <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionText} text-center`}>
-          Experience
-        </h2>
+        <h2 className={`${styles.sectionText} text-center`}>Experience</h2>
       </motion.div>
 
       <div className="relative mt-10 md:mt-20 md:p-20 flex flex-col items-center sm:flex-row sm:items-start">
