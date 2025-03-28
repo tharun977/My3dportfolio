@@ -54,6 +54,35 @@
   perspective: 10px;
 }
 
+body {
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  
+  &, * {
+    cursor: none;
+  }
+}
+
+.cursor {
+  position: fixed;
+  background: #2128bd;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+::selection {
+  color: #fff;
+  background: #2128bd;
+}
+
+
+
 .parallax {
   position: relative;
   min-height: 75vh;
