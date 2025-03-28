@@ -10,14 +10,20 @@ const portfolio = [
   {
     name: "Lost and Found App",
     description: "A React and Django-based web application for reporting and finding lost items.",
-    image: "src\assets\lost&found.png",
+    image: "/assets/lost&found.png",
   },
   {
     name: "SPOT - Smart Parking Organization Tool",
     description: "A Django-based smart parking system with automated payments and modern UI.",
-    image: "src\assets\spot.png",
+    image: "/assets/spot.png",
+  },
+  {
+    name: "3D Portfolio Website",
+    description: "A sleek, responsive 3D portfolio website built with Vite-React and Tailwind CSS with Three.js and Framer Motion.",
+    image: "/assets/portfolio.png",
   },
 ];
+
 
 const ProjectCard = ({ index, name, description, image }) => {
   const controls = useAnimation();

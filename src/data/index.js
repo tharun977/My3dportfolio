@@ -1,7 +1,3 @@
-import lostandfound from "../assets/lost&found.png";
-import spot from "../assets/spot.png";
-import algorithms from "../assets/algorithms.png";
-
 export const navLinks = [
   {
     id: "hero",
@@ -71,21 +67,18 @@ export const experiences = [
 
 export const portfolio = [
   {
-    name: "Lost & Found React App",
-    description:
-      "A React front-end for a Django-based lost and found system, ensuring smooth UI/UX and efficient search functionality.",
-    image: lostandfound,
+    name: "Lost and Found App",
+    description: "A React and Django-based web application for reporting and finding lost items.",
+    image: "/assets/lost&found.png",
   },
   {
     name: "SPOT - Smart Parking Organization Tool",
-    description:
-      "A Django-based smart parking system with automated payments and modern UI.",
-    image: spot,
+    description: "A Django-based smart parking system with automated payments and modern UI.",
+    image: "/assets/spot.png",
   },
   {
-    name: "3d Portfolio Website",
-    description:
-      "A sleek, responsive 3d portfolio website built with Vite-React and Tailwind CSS with threejs and framer motion, showcasing my projects and experience.",
-    image: algorithms,
+    name: "3D Portfolio Website",
+    description: "A sleek, responsive 3D portfolio website built with Vite-React and Tailwind CSS with Three.js and Framer Motion.",
+    image: "/assets/portfolio.png",
   },
 ];
