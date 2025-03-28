@@ -44,18 +44,18 @@ const Navbar = () => {
       className="w-full flex items-center bg-gradient-to-b from-black sm:bg-none p-8 sm:px-16 sm:py-10 fixed z-40 pointer-events-none"
     >
       <div className='w-full flex justify-between items-start mx-auto'>
-      <Link
-        to="/"
-        className="flex items-start"
-        onClick={() => {
-          setActive("hero");
-          document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
-        }}
-      >
-        <p className="text-white text-[26px] lg:text-[36px] font-bold pointer-events-auto cursor-pointer flex">
-          TR
-        </p>
-      </Link>
+        <Link
+          to="/"
+          className="flex items-start"
+          onClick={() => {
+            setActive("hero");
+            document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <p className="text-white text-[26px] lg:text-[36px] font-bold pointer-events-auto cursor-pointer flex">
+            TR
+          </p>
+        </Link>
 
         <ul className='list-none hidden sm:flex flex-col gap-5'>
           {navLinks.map((nav) => (
@@ -72,6 +72,21 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+
+          {/* Download Resume Button */}
+          <li
+            className={`relative flex items-center ${
+              active === "resume" ? "text-white" : "text-slate-500"
+            } hover:text-white text-[18px] lg:text-[24px] font-bold pointer-events-auto cursor-pointer`}
+          >
+            <a 
+              href="https://drive.google.com/file/d/1mKdCFkK3DRA2WBzYKmNAZnLYJ7wR0PSP/view?usp=drivesdk" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Download Resume
+            </a>
+          </li>
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
@@ -102,6 +117,21 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+
+              {/* Mobile View Download Resume Button */}
+              <li
+                className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                  active === "resume" ? "text-quaternary" : "text-secondary"
+                }`}
+              >
+                <a 
+                  href="https://drive.google.com/file/d/1mKdCFkK3DRA2WBzYKmNAZnLYJ7wR0PSP/view?usp=drivesdk" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Download Resume
+                </a>
+              </li>
             </ul>
           </div>
         </div>
