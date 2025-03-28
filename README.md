@@ -8,7 +8,7 @@ This is the official code repository for my 3D developer portfolio website.
 I built this 3D portfolio to showcase my work, skills, and experience in an interactive and visually stunning way. This website serves as a dynamic representation of my abilities, featuring Three.js animations, interactive elements, and parallax effects. My goal is to make an immediate impact on visitors, whether they are potential employers, clients, or collaborators.
 
 ## Inspo & Video Guide
-I built this portfolio website on the base of this Youtube video by ForrestKnight also it's one of the most simple ways to start getting into 3d design integration and three.js.
+I built this portfolio website on the base of this Youtube video by ForrestKnight also it's one of the most simple ways to start getting into 3d design integration and three.js.I've added many other features which are not demonstrated in this video to make this my version and test my limits so if you want feel free to contact me if any queries about the project through the contact page on the website or by an issue.
 [![Watch the Video](https://img.youtube.com/vi/f_ZxgQQ74Lc/0.jpg)](https://youtu.be/f_ZxgQQ74Lc)
 
 ## Technologies Used
