@@ -3,33 +3,62 @@
 ![3D Parallax Developer Portfolio Thumbnail](https://github.com/tharun977/My3dportfolio/blob/main/public/assets/portfolio.png)
 
 ## Introduction
-This is a code repository for my 3D developer portfolio website. I built this portfolio to replace my previous minimal portfolio and complement my GitHub profile and terminal website. This custom website showcases my skills through Three.js 3D graphics, interactive animations, and parallax effects while maintaining an intuitive and user-friendly design.
+This is the official code repository for my 3D developer portfolio website.
 
-The website provides potential clients and employers with a quick insight into my capabilities, not only through the listed projects but also through the development of the website itself.
+I built this 3D portfolio to showcase my work, skills, and experience in an interactive and visually stunning way. This website serves as a dynamic representation of my abilities, featuring Three.js animations, interactive elements, and parallax effects. My goal is to make an immediate impact on visitors, whether they are potential employers, clients, or collaborators.
+
+## Inspo & Video Guide
+I built this portfolio website on the base of this Youtube video by ForrestKnight also it's one of the most simple ways to start getting into 3d design integration and three.js.
+[![Watch the Video](https://img.youtube.com/vi/f_ZxgQQ74Lc/0.jpg)](https://youtu.be/f_ZxgQQ74Lc)
 
 ## Technologies Used
-- **Vite** - Build tool for efficient development
+- **Vite** - Fast build tool for modern web projects
 - **JavaScript** - Core programming language
-- **React** - Frontend JavaScript library for building dynamic UIs
+- **React** - Library for building interactive UIs
 - **Tailwind CSS** - Utility-first CSS framework for styling
-- **Three.js** - JavaScript library for rendering 3D graphics
-- **Framer Motion** - Library for animations and interactive motion effects
-- **Hostinger** - Web hosting platform
+- **Three.js** - 3D graphics and animations
+- **Framer Motion** - Smooth animations and interactions
+- **EmailJS** - Contact form email integration
 - **GitHub** - Version control and CI/CD
 
-## Extra Resources
-- [Spaceman by wallmasterr](https://sketchfab.com/3d-models/tenhun-falling-spaceman-fanart-9fd80b6a259f41fd99e6f56eee686dc5)
+## Features
+- **3D Animated Background** - Fully interactive environment powered by Three.js
+- **Parallax Effects** - Smooth motion for an immersive user experience
+- **Responsive Design** - Optimized for all screen sizes and devices
+- **Contact Form** - Users can send messages directly via EmailJS
+- **Smooth Animations** - Enhanced user interactions using Framer Motion
+
+## Resources & Inspiration
+- [Spaceman Model by wallmasterr](https://sketchfab.com/3d-models/tenhun-falling-spaceman-fanart-9fd80b6a259f41fd99e6f56eee686dc5)
 - [Planet Surface by jongjawi](https://stock.adobe.com/images/landscape-surface-of-planet-sky-space-science-fiction-fantasy-illustration/330880441?asset_id=330880441)
 - [Position Animation by Teshank](https://github.com/teshank2137/portfolio)
 
-## Future Improvements
-- Optimizing the parallax effect for better responsiveness on smaller screens.
-- Enhancing performance by reducing unnecessary renders and optimizing 3D assets.
-- Adding more interactive elements to improve user engagement.
+## Installation & Usage
+To run this project locally:
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/tharun977/My3dportfolio.git
+   ```
+2. Navigate into the project directory:
+   ```sh
+   cd My3dportfolio
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-### 🚀 Explore the Project
-Check out the live version of my portfolio and get in touch with me!
+## Contact
+If you have any questions or suggestions, feel free to reach out:
+- **Email**: tharunraman10@gmail.com
+- **GitHub**: [tharun977](https://github.com/tharun977)
+- **LinkedIn**: [Tharun Raman](https://www.linkedin.com/in/tharunraman)
 
 ---
-Developed by **Tharun Raman**
+
+This project is a continuous work in progress. Contributions and feedback are always welcome!
 
