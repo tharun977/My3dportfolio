@@ -8,33 +8,66 @@ const Spaceman = ({ scale, position }) => {
   const spacemanRef = useRef();
   const { scene, animations } = useGLTF(spacemanScene);
   const { actions } = useAnimations(animations, spacemanRef);
+  const [hovered, setHovered] = useState(false);
+  const [targetRotation, setTargetRotation] = useState([0, 2.2, 0]);
+  const [currentRotation, setCurrentRotation] = useState([0, 2.2, 0]);
+  const [targetPosition, setTargetPosition] = useState(position);
+  const [currentPosition, setCurrentPosition] = useState(position);
 
   useEffect(() => {
     actions["Idle"].play();
   }, [actions]);
 
+  useEffect(() => {
+    const lerp = (start, end, alpha) => start + (end - start) * alpha;
+
+    const smoothMove = () => {
+      setCurrentRotation((prev) => [
+        lerp(prev[0], targetRotation[0], 0.05),
+        lerp(prev[1], targetRotation[1], 0.05),
+        lerp(prev[2], targetRotation[2], 0.05),
+      ]);
+      setCurrentPosition((prev) => [
+        lerp(prev[0], targetPosition[0], 0.05),
+        lerp(prev[1], targetPosition[1], 0.05),
+        lerp(prev[2], targetPosition[2], 0.05),
+      ]);
+    };
+
+    const interval = setInterval(smoothMove, 16); // Runs every ~16ms (~60 FPS)
+    return () => clearInterval(interval);
+  }, [targetRotation, targetPosition]);
+
+  const handlePointerMove = (e) => {
+    if (!hovered) return;
+
+    const x = (e.clientX / window.innerWidth) * 2 - 1;
+    const y = (e.clientY / window.innerHeight) * 2 - 1;
+
+    setTargetRotation([y * 0.5, 2.2 + x * 0.5, 0]);
+    setTargetPosition([position[0] + x * 0.1, position[1] - y * 0.1, position[2]]);
+  };
+
   return (
-    <mesh ref={spacemanRef} position={position} scale={scale} rotation={[0, 2.2, 0]}>
+    <mesh
+      ref={spacemanRef}
+      position={currentPosition}
+      scale={scale}
+      rotation={currentRotation}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+      onPointerMove={handlePointerMove}
+    >
       <primitive object={scene} />
     </mesh>
   );
 };
 
 const SpacemanCanvas = ({ scrollContainer }) => {
-  const [rotationX, setRotationX] = useState(0);
-  const [rotationY, setRotationY] = useState(0);
   const [scale, setScale] = useState([2, 2, 2]);
   const [position, setPosition] = useState([0.2, -0.7, 0]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = scrollContainer.current.scrollTop;
-      const rotationXValue = scrollTop * -0.0006;
-      const rotationYValue = scrollTop * -0.00075;
-      setRotationX(rotationXValue);
-      setRotationY(rotationYValue);
-    };
-
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setScale([1, 1, 1]);
@@ -55,14 +88,10 @@ const SpacemanCanvas = ({ scrollContainer }) => {
     };
 
     handleResize();
-    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [scrollContainer]);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <Canvas className={`w-full h-screen bg-transparent z-10`} camera={{ near: 0.1, far: 1000 }}>
@@ -73,7 +102,7 @@ const SpacemanCanvas = ({ scrollContainer }) => {
         <spotLight position={[0, 50, 10]} angle={0.15} penumbra={1} intensity={2} />
         <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1} />
 
-        <Spaceman rotationX={rotationX} rotationY={rotationY} scale={scale} position={position} />
+        <Spaceman scale={scale} position={position} />
       </Suspense>
     </Canvas>
   );
