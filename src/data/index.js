@@ -1,8 +1,6 @@
-import {
-  algorithms,
-  devnotes,
-  oscs,
-} from "../assets";
+import lostandfound from "../assets/lost&found.png";
+import spot from "../assets/spot.png";
+import algorithms from "../assets/algorithms.png";
 
 export const navLinks = [
   {
@@ -23,69 +21,71 @@ export const navLinks = [
   },
 ];
 
-const experiences = [
+export const experiences = [
   {
-    title: "YouTube Content Creator",
-    company_name: "Self Employed",
-    date: "2016 - Present",
+    title: "Front-End Developer Intern",
+    company_name: "Dcinfotech",
+    date: "Sep 2024",
     details: [
-      "Built a subscriber base of over <span style='color: white;'>500,000 subscribers</span> by creating video content to help programmers.",
-      "Crafted visually appealling programming videos that have garnered over <span style='color: white;'>30,000,000 views</span>.",
-      "Produced high-quality educational and entertaining videos for clients including <span style='color: white;'>Intel, JetBrains, and MicroCenter</span>.",
+      "Completed a front-end development internship at Dcinfotech.",
+      "Built some responsive and interactive web-apps.",
+      "Used React.js, Tailwind CSS, and JavaScript to enhance user experience.",
+      "GitHub Repository: <a href='https://github.com/tharun977/Dcinfotech' target='_blank' class='text-blue-500 underline'>View Project</a>",
     ],
   },
   {
-    title: "Software Developer",
-    company_name: "Indie",
-    date: "2019 - 2023",
+    title: "Machine Learning Intern",
+    company_name: "Prodigy Infotech",
+    date: "Oct 2024",
     details: [
-      "Developed and delivered custom interdisciplinary coding portfolio for clients including <span style='color: white;'>Nvidia, Hostinger, and Amazon</span>.",
-      "<span style='color: white;'>Designed and developed innovative</span> AI applications and interactive websites.",
-      "<span style='color: white;'>Managed full project lifecycle</span> from concept to deployment in successful and timely project completions.",
+      "Developed a K-means clustering model for retail consumer data.",
+      "Analyzed and visualized customer segmentation using Python and Scikit-Learn.",
+      "Worked with real-world datasets to gain insights into customer behavior.",
+      "GitHub Repository: <a href='https://github.com/tharun977/PRODIGY_ML_03' target='_blank' class='text-blue-500 underline'>View Project</a>",
     ],
   },
   {
-    title: "Software Engineer",
-    company_name: "Prime 3",
-    date: "2018 - 2019",
+    title: "Django Developer (Self-Employed)",
+    company_name: "Rumi Press",
+    date: "Jul 2024 - Present",
     details: [
-      "Built custom enterprise applications for a <span style='color: white;'>Fortune 500 company</span> as a full-stack software engineer.",
-      "Developed and maintained <span style='color: white;'>scalable backend services</span>, ensuring high availability for critical business applications.",
-      "<span style='color: white;'>Collaborated with a team</span> to design and implement front-end interfaces.",
+      "Developing a Django-based web application to manage book distribution.",
+      "Implemented CRUD functionalities for book categories and distribution expenses.",
+      "Designed and optimized database models for better performance.",
+      "GitHub Repository: <a href='https://github.com/tharun977/Projects/tree/main/rumipress' target='_blank' class='text-blue-500 underline'>View Project</a>",
     ],
   },
   {
-    title: "Computer Science",
-    company_name: "ODU",
-    date: "2015 - 2018",
+    title: "Cloud Engineer Intern",
+    company_name: "Cloud Counselage Pvt. Ltd.",
+    date: "Oct 2024 - Present",
     details: [
-      "Built a <span style='color: white;'>computer science foundation</span> learning theory, computer architecture, and software engineering.",
-      "Worked and interned at <span style='color: white;'>NASA and Norfolk Southern Railway</span> to gain practical experience in the field of data analysis.",
-      "Acted as a member of the <span style='color: white;'>Association for Computing Machinery</span> (ACM).",
+      "Learning the fundamentals of cloud computing and infrastructure management.",
+      "Working with AWS services like EC2, S3, and IAM for basic cloud operations.",
+      "Setting up and managing virtual machines and storage solutions.",
+      "Exploring CI/CD concepts and automation using GitHub Actions.",
+      "Assisting in monitoring cloud resources and improving deployment processes.",
     ],
   },
 ];
 
-const portfolio = [
+export const portfolio = [
   {
-    name: "Open Source Computer Science Repo",
+    name: "Lost & Found React App",
     description:
-      "A GitHub repo with over 17,000 stars containing a curated list of free online courses from reputable universities that satisfy undergraduate computer science requirements.",
-    image: oscs,
+      "A React front-end for a Django-based lost and found system, ensuring smooth UI/UX and efficient search functionality.",
+    image: lostandfound,
   },
   {
-    name: "Dev Notes",
+    name: "SPOT - Smart Parking Organization Tool",
     description:
-      "A newsletter with over 6,000 readers made for software developers to keep up with this rapidly evolving industry, with a sister platform in progress.",
-    image: devnotes,
+      "A Django-based smart parking system with automated payments and modern UI.",
+    image: spot,
   },
   {
-    name: "Visually Understanding Algorithms",
+    name: "3d Portfolio Website",
     description:
-      "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.",
+      "A sleek, responsive 3d portfolio website built with Vite-React and Tailwind CSS with threejs and framer motion, showcasing my projects and experience.",
     image: algorithms,
   },
 ];
-
-export { experiences, portfolio };
-

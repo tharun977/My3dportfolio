@@ -2,21 +2,26 @@ import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import { portfolio } from "../data";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  image,
-}) => {
+const portfolio = [
+  {
+    name: "Lost and Found App",
+    description: "A React and Django-based web application for reporting and finding lost items.",
+    image: "src\assets\lost&found.png",
+  },
+  {
+    name: "SPOT - Smart Parking Organization Tool",
+    description: "A Django-based smart parking system with automated payments and modern UI.",
+    image: "src\assets\spot.png",
+  },
+];
+
+const ProjectCard = ({ index, name, description, image }) => {
   const controls = useAnimation();
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     if (inView) {
@@ -41,7 +46,6 @@ const ProjectCard = ({
           className='w-full h-auto object-cover md:rounded-3xl'
         />
       </div>
-
       <div className={`w-full md:w-2/5 px-6 md:p-16 flex flex-col justify-center ${isEven ? "text-left md:text-left" : "text-left md:text-right"}`}>
         <h3 className='text-white font-medium text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl lg:text-5xl leading-tight'>{name}</h3>
         <p className='mt-4 text-secondary text-sm sm:text-xs md:text-sm lg:text-md xl:text-lg 2xl:text-xl'>{description}</p>
@@ -56,7 +60,6 @@ const Portfolio = () => {
       <motion.div variants={textVariant()}>
         <h2 className={`${styles.sectionText}`}>Portfolio</h2>
       </motion.div>
-
       <div className='mt-10 md:mt-20 flex flex-col gap-10 md:gap-20'>
         {portfolio.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
