@@ -57,6 +57,7 @@
 body {
   font-family: Montserrat, sans-serif;
   font-weight: 900;
+  color: black; /* Default text color */
   
   &, * {
     cursor: none;
@@ -66,19 +67,47 @@ body {
 .cursor {
   position: fixed;
   background: #2128bd;
-  width: 20px;
-  height: 20px;
-  margin: -10px 0 0 -10px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  will-change: transform;
-  user-select: none;
+  mix-blend-mode: difference;  /* Key property */
   pointer-events: none;
   z-index: 10000;
+  transition: transform 0.1s ease-out;
 }
 
-::selection {
-  color: #fff;
+.shapes {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
   background: #2128bd;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: #fff;
+  mix-blend-mode: screen;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+h1:hover {
+  color: #2128bd; /* Change color on hover */
 }
 
 
